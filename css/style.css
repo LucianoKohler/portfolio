@@ -42,5 +42,5 @@ a:hover::before{transform: scaleX(1);}
 a:active{
     background-color: black;
     color: white;
-    transition: background-color .15s ease;
+    transition: color .15s ease, background-color .15s ease;
 }
