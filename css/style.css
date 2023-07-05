@@ -7,6 +7,8 @@ html, body{width: 100%; height: 100%; padding: 0; margin: 0;}
 :root{
     font-family: Rubik;
     scroll-behavior: smooth;
+    --main: #fbf9ff;
+    background-color: var(--main);
 }
 
 body{
@@ -43,6 +45,9 @@ a:active{
 }
 
 a:active::before{background-color: white;}
+
+section header{text-align: center; margin: 20px;}
+section header h1{display: inline;}
 /*Formatação da navbar*/
 
 nav{
