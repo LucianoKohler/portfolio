@@ -188,3 +188,52 @@ nav a::before{bottom: 2px !important;}
 .element img{
     height: 80px;
 }
+
+@keyframes spin {
+    0% {rotate: 0deg;}
+    50% {rotate: 180deg;}
+    100% {rotate: 360deg;}
+}
+
+@keyframes spinElement{
+    0% {rotate: 0deg;}
+    50% {rotate: 45deg;}
+    100% {rotate: 90deg;}
+}
+
+.track {
+    position: relative;
+    border: 2px dotted #000000;
+    border-radius: 50%;
+    width: 500px;
+    height: 500px;
+    margin: 0 auto;
+}
+
+.element {
+    position: absolute;
+    left: calc(50% - 25px);
+    top: calc(50% - 25px);
+    height: 50px;
+    width: 50px;
+    border: 2px dotted #000000;
+    border-radius: 50%;
+    /* animation: spin 20s linear infinite; */
+}
+
+.element img{
+    animation: spinElement 20s linear infinite;
+
+}
+
+.element:nth-child(1) {transform: translateX(250px);}
+.element:nth-child(2) {transform: rotate(60deg) translateX(250px);}
+.element:nth-child(3) {transform: rotate(120deg) translateX(250px);}
+.element:nth-child(4) {transform: rotate(180deg) translateX(250px);}
+.element:nth-child(5) {transform: rotate(240deg) translateX(250px);}
+.element:nth-child(6) {transform: rotate(300deg) translateX(250px);}
+.element:nth-child(1) img{rotate: -220deg;}
+.element:nth-child(2) img{}
+.element:nth-child(3) img{}
+.element:nth-child(4) img{}
+.element:nth-child(5) img{}
