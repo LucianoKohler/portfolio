@@ -98,12 +98,21 @@ nav a::before{bottom: 2px !important;}
     gap: 5%;
 }
 
+@keyframes floating {
+    0% {transform: translateY(0px)}
+    25%{transform: translateY(20px)}
+    50%{transform: translateY(0px)}
+    75%{transform: translateY(-20px)}
+    100%{transform: translateY(0px)}
+}
+
 .escola{
     width: 300px;
     min-height: 650px;
-    max-height: fit-content;
+    height: 750px;
     padding: 50px;
     box-shadow: 0 0 20px rgba(0, 0, 0, .25);
+    animation: floating 5s infinite linear;
 }
 
 .escola:nth-child(1){background: url(../assets/images/fundo-escolaS.png) bottom left no-repeat; background-size: cover;}
@@ -193,20 +202,22 @@ nav a::before{bottom: 2px !important;}
 
 .track {
     position: relative;
-    border-radius: 50%;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
     width: 600px;
     height: 600px;
     margin: 60px auto;
 }
 
-.element {
+.element{
     position: absolute;
     left: calc(50% - 30px);
     top: calc(50% - 30px);
     height: 60px;
     width: 60px;
     animation: spin 20s linear infinite;
+}
+
+.element img:hover{
+    transition: all 1s ease;
 }
 
 .element img{
@@ -220,3 +231,15 @@ nav a::before{bottom: 2px !important;}
 .element:nth-child(4) {transform: rotate(180deg) translateX(300px);}
 .element:nth-child(5) {transform: rotate(240deg) translateX(300px);}
 .element:nth-child(6) {transform: rotate(300deg) translateX(300px);}
+
+#middle{
+    width: 60%;
+    position: absolute;
+    left: calc(50% - 175px);
+    top: calc(50% - 65px);
+    text-align: center;
+}
+
+#title{
+    transition: all .2s ease;
+}
