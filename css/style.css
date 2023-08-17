@@ -13,7 +13,9 @@ html, body{width: 100%; height: 100%; padding: 0; margin: 0;}
 
 body{
     padding-bottom: 100px;
+    height: 99999px;
     margin-bottom: 100px;
+    background-size: cover;
 }
 
 /*Formatação padrão de elementos*/
@@ -64,6 +66,7 @@ nav{
     gap: 30px;
     background-color: transparent;
     position: fixed;
+    z-index: 999;
 }
 
 nav a{padding: 5px !important; } /*Formatação específica feita para a linha aparecer no background ao se clicar nela*/
@@ -71,20 +74,51 @@ nav a::before{bottom: 2px !important;}
 
 /*Formatação do sobre mim*/
 
-#sobre{
-    height: 100vh;
+#about{
     display: flex;
 }
 
-#sobre main{
-    flex: 3;
-}
-
-#sobre aside{
-    background: var(--secon);
-    flex: 2;
+.left, .right{
+    height: 1000px;
+    flex: 1;
 
 }
+
+.left{
+    display: block;
+}
+
+.right{
+    background-color: #C050D6;
+}
+
+@keyframes ballsMove {
+    0%{left: 80%; top: 60%; gap: 10px;}
+    50%{left: 80%; top: 70%; gap: 30px; width: 160px;}
+    100%{left: 90%; top: 70%; gap: 20px;}
+}
+
+#balls{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 120px;
+    animation: ballsMove 2s ease-in-out alternate;
+
+    position: absolute;
+    left: 90%; 
+    top: 70%; 
+}
+
+.ball{
+    height: 25px;
+    width: 25px;
+    background-color: #fff;
+    border-radius: 50%;
+}
+
+
 
 /*Formatação de Educação*/
 
@@ -99,11 +133,8 @@ nav a::before{bottom: 2px !important;}
 }
 
 @keyframes floating {
-    0% {transform: translateY(0px)}
-    25%{transform: translateY(20px)}
-    50%{transform: translateY(0px)}
-    75%{transform: translateY(-20px)}
-    100%{transform: translateY(0px)}
+    0%, 100%{transform: translateY(00px)}
+    50%{transform: translateY(30px)}
 }
 
 .escola{
@@ -112,7 +143,10 @@ nav a::before{bottom: 2px !important;}
     height: 750px;
     padding: 50px;
     box-shadow: 0 0 20px rgba(0, 0, 0, .25);
-    animation: floating 5s infinite linear;
+}
+
+.floating{
+    animation: floating 5s infinite ease-in-out;
 }
 
 .escola:nth-child(1){background: url(../assets/images/fundo-escolaS.png) bottom left no-repeat; background-size: cover;}
