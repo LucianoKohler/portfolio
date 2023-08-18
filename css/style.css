@@ -13,7 +13,9 @@ html, body{width: 100%; height: 100%; padding: 0; margin: 0;}
 
 body{
     padding-bottom: 100px;
+    height: 99999px;
     margin-bottom: 100px;
+    background-size: cover;
 }
 
 /*Formatação padrão de elementos*/
@@ -64,6 +66,7 @@ nav{
     gap: 30px;
     background-color: transparent;
     position: fixed;
+    z-index: 999;
 }
 
 nav a{padding: 5px !important; } /*Formatação específica feita para a linha aparecer no background ao se clicar nela*/
@@ -71,20 +74,51 @@ nav a::before{bottom: 2px !important;}
 
 /*Formatação do sobre mim*/
 
-#sobre{
-    height: 100vh;
+#about{
     display: flex;
 }
 
-#sobre main{
-    flex: 3;
-}
-
-#sobre aside{
-    background: var(--secon);
-    flex: 2;
+.left, .right{
+    height: 1000px;
+    flex: 1;
 
 }
+
+.left{
+    display: block;
+}
+
+.right{
+    background-color: #C050D6;
+}
+
+@keyframes ballsMove {
+    0%{left: 80%; top: 60%; gap: 10px;}
+    50%{left: 80%; top: 70%; gap: 30px; width: 160px;}
+    100%{left: 90%; top: 70%; gap: 20px;}
+}
+
+#balls{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 120px;
+    animation: ballsMove 2s ease-in-out alternate;
+
+    position: absolute;
+    left: 90%; 
+    top: 70%; 
+}
+
+.ball{
+    height: 25px;
+    width: 25px;
+    background-color: #fff;
+    border-radius: 50%;
+}
+
+
 
 /*Formatação de Educação*/
 
@@ -98,12 +132,21 @@ nav a::before{bottom: 2px !important;}
     gap: 5%;
 }
 
+@keyframes floating {
+    0%, 100%{transform: translateY(00px)}
+    50%{transform: translateY(30px)}
+}
+
 .escola{
     width: 300px;
     min-height: 650px;
-    max-height: fit-content;
+    height: 750px;
     padding: 50px;
     box-shadow: 0 0 20px rgba(0, 0, 0, .25);
+}
+
+.floating{
+    animation: floating 5s infinite ease-in-out;
 }
 
 .escola:nth-child(1){background: url(../assets/images/fundo-escolaS.png) bottom left no-repeat; background-size: cover;}
@@ -163,34 +206,74 @@ nav a::before{bottom: 2px !important;}
     padding-top: 10px;
 }
 
-/*Formatação contato*/
+/*Formatação habilidades*/
 
-#contato button{
-    background-color: transparent;
-    border: 2px solid black;
-    border-radius: 10px;
-    width: 15%;
-    aspect-ratio: 1/1;
-    outline: none;
-    cursor: pointer;
-    transition: all .3s ease;
+#habilidades{
     display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
+
 }
 
-#contato button:hover{
-    transform: scale(1.1);
-    box-shadow: 0 0 7px 7px rgba(0, 0, 0, .25);
+#items{
+    display: flex;
+    justify-content: space-evenly;
 }
 
-#contato button img{
-    width: 50%;
-}
-
-#redes{
+#items div{
+    padding: 20px;
     display: flex;
     justify-content: center;
-    gap: 20px;
+}
+
+#items div:hover{
+    background-color: rgb(250, 250, 250);
+}
+
+@keyframes spin {
+    0% {rotate: 0deg;}
+    50% {rotate: 180deg;}
+    100% {rotate: 360deg;}
+}
+
+.track {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    margin: 60px auto;
+}
+
+.element{
+    position: absolute;
+    left: calc(50% - 30px);
+    top: calc(50% - 30px);
+    height: 60px;
+    width: 60px;
+    animation: spin 20s linear infinite;
+}
+
+.element img:hover{
+    transition: all 1s ease;
+}
+
+.element img{
+    rotate: 90deg; 
+    height: 100px;
+}
+
+.element:nth-child(1) {transform: translateX(300px);}
+.element:nth-child(2) {transform: rotate(060deg) translateX(300px);}
+.element:nth-child(3) {transform: rotate(120deg) translateX(300px);}
+.element:nth-child(4) {transform: rotate(180deg) translateX(300px);}
+.element:nth-child(5) {transform: rotate(240deg) translateX(300px);}
+.element:nth-child(6) {transform: rotate(300deg) translateX(300px);}
+
+#middle{
+    width: 60%;
+    position: absolute;
+    left: calc(50% - 175px);
+    top: calc(50% - 65px);
+    text-align: center;
+}
+
+#title{
+    transition: all .2s ease;
 }
