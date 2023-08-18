@@ -2,12 +2,11 @@ console.log('Hello, world!')
 
 //Fazer com que as minhas escolaridades comecem em tempos diferentes
 let i = 0;
-setInterval(() => { 
+let floating = setInterval(() => { 
 
     document.getElementsByClassName('escola')[i].classList.add('floating')
+    if(i == 2) clearInterval(floating);
     i++;
-
-    if(i == 2) clearInterval;
 }, 500);
 
 
