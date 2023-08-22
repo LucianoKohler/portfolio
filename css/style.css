@@ -76,8 +76,6 @@ nav a::before{bottom: 2px !important;}
 
 #about{
     display: flex;
-    background: url(../assets/images/fundo.png) no-repeat left;
-    background-size: cover;
 
 }
 
@@ -100,25 +98,6 @@ nav a::before{bottom: 2px !important;}
     z-index: 2;
 }
 
-/* @keyframes ballsMove {
-    0%{left: 80%; top: 60%; gap: 10px;}
-    50%{left: 80%; top: 70%; gap: 30px; width: 160px;}
-    100%{left: 90%; top: 70%; gap: 20px;}
-} */
-
-#balls{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 20px;
-    width: 120px;
-    animation: ballsMove 2s ease-in-out alternate;
-
-    position: absolute;
-    left: 90%; 
-    top: 70%; 
-}
-
 .ball{
     height: 25px;
     width: 25px;
@@ -138,6 +117,8 @@ nav a::before{bottom: 2px !important;}
     flex-wrap: wrap;
     margin: 20px;
     gap: 5%;
+    margin-bottom: 60px;
+
 }
 
 @keyframes floating {
@@ -218,7 +199,7 @@ nav a::before{bottom: 2px !important;}
 
 #habilidades{
     display: flex;
-
+    flex-wrap: wrap;
 }
 
 #items{
@@ -246,7 +227,7 @@ nav a::before{bottom: 2px !important;}
     position: relative;
     width: 600px;
     height: 600px;
-    margin: 60px auto;
+    margin: 100px auto;
 }
 
 .element{
@@ -255,7 +236,7 @@ nav a::before{bottom: 2px !important;}
     top: calc(50% - 30px);
     height: 60px;
     width: 60px;
-    animation: spin 20s linear infinite;
+    animation: spin 15s linear infinite;
 }
 
 .element img:hover{
@@ -265,6 +246,7 @@ nav a::before{bottom: 2px !important;}
 .element img{
     rotate: 90deg; 
     height: 100px;
+    
 }
 
 .element:nth-child(1) {transform: translateX(300px);}
@@ -278,10 +260,37 @@ nav a::before{bottom: 2px !important;}
     width: 60%;
     position: absolute;
     left: calc(50% - 175px);
-    top: calc(50% - 65px);
+    top: calc(50% - 120px);
     text-align: center;
 }
 
 #title{
+    font-size: 40px;
     transition: all .2s ease;
 }
+
+.hab{
+    display: flex;
+    flex-direction: row;
+}
+
+.habimages{
+    flex: 1;
+    border: 1px solid black;
+    padding: 50px;
+}
+
+.habcontent{
+    flex: 3;
+    border: 1px solid black;
+
+}
+
+.habimages img{
+    height: 200px;
+    position: absolute;
+}
+
+.habimages img:nth-child(1){transform: rotate(90deg);}
+.habimages img:nth-child(2){transform: rotate(60deg);}
+.habimages img:nth-child(3){transform: rotate(30deg);}

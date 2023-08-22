@@ -1,45 +1,10 @@
 console.log('Hello, world!')
 
 //Fazer com que as minhas escolaridades comecem em tempos diferentes
-let i = 0;
-let floating = setInterval(() => { 
-
-    document.getElementsByClassName('escola')[i].classList.add('floating')
-    if(i == 2) clearInterval(floating);
-    i++;
-}, 500);
-
-
-let habs = document.getElementsByClassName('element');
-let midTitle = document.querySelector('#middle #title')
-let midDesc = document.querySelector('#middle #desc')
-
-for(let i = 0; i< habs.length; i++){
-    habs[i].addEventListener('mouseover', () =>{
-        for(let j = 0; j< habs.length; j++){
-            habs[j].style.animationPlayState = 'paused';
-        }
-        changeDesc(habInfos[i][0])
-    })
-
-    habs[i].addEventListener('mouseout', () =>{
-        for(let j = 0; j< habs.length; j++){
-            habs[j].style.animationPlayState = 'running';
-        }
-        changeDesc('Minhas habilidades', 'Passe o mouse em cima das minhas capacitações para saber mais sobre')
-    })
-}
-
-function changeDesc(newTitle, newDesc){
-    midTitle.style.color = 'white';
-    
-    setTimeout(() =>{
-        midTitle.innerHTML = newTitle
-    }, 200)
-
-    setTimeout(() =>{
-        midTitle.style.color = 'black';
-    }, 400)
+for(let i = 0; i < 3; i++){
+    setTimeout(() => { 
+        document.getElementsByClassName('escola')[i].classList.add('floating')
+    }, 500*i);
 }
 
 let habInfos = [
@@ -47,7 +12,7 @@ let habInfos = [
     ["HTML",""],
     ["JavaScript",""], 
     ["TypeScript",""], 
-    ["C++",""], 
+    ["C++","Conhecimentos básicos adquiridos por diversos exercícios de lógica e interpretação de enunciados."], 
     ["Canva",""], 
     ["Figma",""]
 ];
