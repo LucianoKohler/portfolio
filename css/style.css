@@ -200,6 +200,7 @@ nav a::before{bottom: 2px !important;}
 #habilidades{
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 #items{
@@ -268,29 +269,3 @@ nav a::before{bottom: 2px !important;}
     font-size: 40px;
     transition: all .2s ease;
 }
-
-.hab{
-    display: flex;
-    flex-direction: row;
-}
-
-.habimages{
-    flex: 1;
-    border: 1px solid black;
-    padding: 50px;
-}
-
-.habcontent{
-    flex: 3;
-    border: 1px solid black;
-
-}
-
-.habimages img{
-    height: 200px;
-    position: absolute;
-}
-
-.habimages img:nth-child(1){transform: rotate(90deg);}
-.habimages img:nth-child(2){transform: rotate(60deg);}
-.habimages img:nth-child(3){transform: rotate(30deg);}
