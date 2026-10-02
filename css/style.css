@@ -1,0 +1,169 @@
+@import "tailwindcss";
+/*npx @tailwindcss/cli -i ./css/style.css -o ./dist/output.css --watch*/
+* {
+    @apply box-border
+}
+
+h2 {
+    @apply
+        text-shadow-lg 
+        text-shadow-red-950
+        text-red-800
+        font-bold 
+        text-2xl 
+}
+
+body {
+    @apply text-white;
+}
+
+body::before {
+    scroll-behavior: smooth;
+    content: "";
+    z-index: -1;
+    background-image: url(../checker.png);
+    background-repeat: repeat;
+    position: fixed;
+    top: -128px;
+    left: -128px;
+    width: calc(100vw + 128px);
+    height: calc(100vh + 128px);
+    will-change: transform;
+    animation: diagonalScroll 3s linear infinite;
+    filter: brightness(35%);
+}
+
+@keyframes diagonalScroll {
+    from { transform: translate(0px, 0px);   }
+    to   { transform: translate(64px, 64px); }
+}
+
+/* ------------ */
+/* TIMELINE CSS */
+/* ------------ */
+
+#timeline {
+    position: relative;
+    max-width: 1024px;
+    margin: 0 auto;
+}
+
+/* The line */
+#timeline::after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -5px;
+    @apply
+        bg-red-800
+}
+
+.timelineEvent {
+    position: relative;
+    width: 50%;
+    @apply
+        pt-2
+        pb-2
+        pr-6
+        pl-6
+}
+
+/* Balls */
+.timelineEvent::after {
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    right: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    @apply 
+        border-6
+      border-red-800
+      bg-slate-800
+        rounded-full
+}
+
+.rightTimelineEvent::after{ left: -20px; }
+
+.leftTimelineEvent { left: 0; }
+.rightTimelineEvent { left: 50%; }
+
+/* connectors */
+.leftTimelineEvent::before {
+    content: "";
+    width: 30px;
+    height: 8px;
+    z-index: 1;
+    position: absolute;
+    top: 50%;
+    right: 10px;    
+    transform: translateY(-50%);
+
+    @apply
+        bg-red-800
+}
+
+.rightTimelineEvent::before {
+    content: "";
+    width: 30px;
+    height: 8px;
+    z-index: 1;
+    position: absolute;
+    top: 50%;
+    left: 10px;    
+    transform: translateY(-50%);
+
+    @apply
+        bg-red-800
+}
+
+.timelineContent{
+    position: relative;
+    box-shadow: 10px 10px #020617;
+    @apply
+        relative
+        m-4
+        border-4
+        border-red-800
+        bg-slate-800
+        p-4
+        rounded
+}
+
+@media screen and (max-width: 1024px) {
+    .timeline::after {
+        left: 31px;
+    }
+
+    .container {
+        width: 100%;
+        padding: 0px 25px 0 70px;
+    }
+}
+
+#footer-icons a {
+    @apply 
+        p-4 
+        bg-slate-800 
+        rounded-full 
+        ease-out 
+        hover:bg-slate-200 
+        hover:text-slate-900 
+        active:bg-red-800 
+        active:text-slate-200
+}
+
+#footer-icons a:nth-child(odd){
+    @apply 
+        bg-red-800 
+        ease-out 
+        hover:bg-slate-200 
+        hover:text-slate-900 
+        active:bg-slate-800 
+        active:text-slate-200
+}
