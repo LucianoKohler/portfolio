@@ -9,27 +9,125 @@
 </head>
 <body>
     <main class="m-auto bg-slate-900 max-w-[1700px]">
-        <!-- <div class="h-[100vh]" id="filler">a</div> -->
-        <div id="timeline">
-            <div class="timelineEvent leftTimelineEvent">
-                <div class="timelineContent">
-                    <h2>2021</h2>
-                    <p>Ensino médio blablablablablabla blablablablablabla blablablablablabla blablablablablabla blablablablablabla blablablablablabla blablablablablabla blablablablablabla blablablablablabla blablablablablabla blablablablablabla blablablablablabla </p>
+        <div class="h-screen bg-slate-950" id="hero">a</div>
+        
+        <!-- Conhecimentos técnicos -->
+        <div class="bg-slate-950" id="technicalKnowledge">
+            <h1 class="container">CONHECIMENTO TÉCNICO</h1>
+
+            <div class="flex p-8 justify-center gap-8 pr-40 pl-40" id="cards">
+                <div class="card">
+                    <div class="cardIcon">
+                        <i data-lucide="gamepad-2" class="text-red-800" height="48" width="48"></i>
+                    </div>
+                    <h3 class="text-center">GAME-DEV E MODELAGEM 3D</h3>
+                    <hr>
+                    <p>Conhecimento intermediário em <b>PICO-8</b>, além de aptidão artística no Aseprite e musical no FLStudio
+                    </p>
                 </div>
-            </div>
-            <div class="timelineEvent rightTimelineEvent">
-                <div class="timelineContent">
-                    <h2>2024</h2>
-                    <p>Faculdade blablabla</p>
+                <div class="card mainCard">
+                    <div class="cardIcon">
+                        <i data-lucide="wallpaper" class="text-red-800" height="48" width="48"></i>
+                        <i data-lucide="settings" class="text-red-800" height="48" width="48"></i>
+                        <i data-lucide="database" class="text-red-800" height="48" width="48"></i>
+                        <i data-lucide="wrench" class="text-red-800" height="48" width="48"></i>
+                    </div>
+                    <h3 class="text-center">DESENVOLVIMENTO FULLSTACK</h3>
+                    <hr>
+                    <p>Aptidão em ferramentas como</p>
+                        <h3>Front-end</h3>
+                            <div class="mainCardBadges">
+                                <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"/>
+                                <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB"/>
+                                <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white"/>
+                            </div>
+                        <h3>Back-end</h3>
+                            <div class="mainCardBadges">
+                                <img src="https://img.shields.io/badge/Node%20js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white"/>
+                                <img src="https://img.shields.io/badge/Java-f89820?style=for-the-badge&logo=buymeacoffee&logoColor=white"/>
+                                <img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white"/>
+                            </div>
+                        <h3>Databases</h3>
+                            <div class="mainCardBadges">
+                                <img src="https://img.shields.io/badge/MariaDB-003545?style=for-the-badge&logo=mariadb&logoColor=white"/>
+                                <img src="https://img.shields.io/badge/MySQL-f89820?style=for-the-badge&logo=mysql&logoColor=white"/>
+                                <img src="https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white"/>
+                            </div>
+                        <h3>Ferramentas Auxiliares</h3>
+                            <div class="mainCardBadges">
+                                <img src="https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white"/>
+                                <img src="https://img.shields.io/badge/Canva-%2300C4CC.svg?&style=for-the-badge&logo=Canva&logoColor=white"/>
+                                <img src="https://img.shields.io/badge/Insomnia-5849be?style=for-the-badge&logo=Insomnia&logoColor=white"/>
+                            </div>
                 </div>
-            </div>
-            <div class="timelineEvent leftTimelineEvent">
-                <div class="timelineContent">
-                    <h2>2026</h2>
-                    <p>Brute blablabla</p>
+                <div class="card">
+                    <div class="cardIcon">
+                        <i data-lucide="balloon" class="text-red-800" height="48" width="48"></i>
+                    </div>
+                    <h3 class="text-center">COMUNICAÇÃO, LIDERANÇA E SOFT SKILLS</h3>
+                    <hr>
+                    <p>
+                        Líder da equipe de programação competitiva <b>Não faremos a H</b>, frequentemente participando 
+                        de inúmeras situações de estresse e corrida contra o tempo em meio aos <i>contests</i>
+                    </p>
                 </div>
             </div>
         </div>
+
+
+        <!-- Timeline -->
+        <div class="container m-auto" id="timeline">
+            <h1 class="text-right">MINHA LINHA DO TEMPO</h2>
+            <p class="text-right mb-2 text-slate-400">Descubra que caminhos me levaram para minha formação atual</p>
+           <div id="timelineMain">
+               <div class="timelineEvent">
+                   <div class="timelineContent">
+                       <h2>Fev. 2021 - SESI/SENAI</h2>
+                       <p>
+                           Em 2021, frequentei o <b>ensino médio com técnico integrado</b> da escola S 
+                           (antigo SESI/SENAI), cursando o técnico em <b>Análise e Desenvolvimento de Sistemas.</b>
+                           <br>
+                           <br>
+                           Lá, interagi com programação pela primeira vez e adquiri aptidões em <b>desenvolvimento 
+                           Web, design gráfico e modelagem de sistemas.</b>
+                       </p>
+                   </div>
+               </div>
+               <div class="timelineEvent">
+                   <div class="timelineContent">
+                       <h2>Fev. 2024 - UDESC CCT</h2>
+                       <p>Em 2024, ingressei ao Centro de Ciências Tecnológicas da UDESC para cursar um 
+                           <b>bacharelado em Ciência da Computação</b> atuando como <b>bolsista e monitor</b>
+                            durante o período da graduação.</p>
+                   </div>
+               </div>
+               <div class="timelineEvent">
+                   <div class="timelineContent">
+                       <h2>Abr. 2026 - BRUTE</h2>
+                       <p>
+                           Em 2026, ingressei ao grupo de programação competitiva <b>BRUTE</b>, onde pude aperfeiçoar 
+                           meus conhecimentos algorítmicos e exercer meus conhecimentos por meio de diversas competições 
+                           de programação como a <b>International Collegiate Programming Contest (ICPC)</b>
+                           <br>
+                           <br>
+                           No mesmo ano, consegui ficar em <b>10° colocado</b> na fase sub-regional do campeonato, 
+                           vencendo cerca de 40 times concorrentes.
+                       </p>
+                   </div>
+               </div>
+               <div class="timelineEvent">
+                   <div class="timelineContent">
+                       <h2>ATUALMENTE</h2>
+                       <p>
+                           Por fim, continuo desenvolvendo meus conhecimentos na área da programação competitiva ao mesmo tempo que
+                           inicio meus estudos por interesse na área da <b>Inteligência Artificial Generativa</b>...
+                       </p>
+                   </div>
+               </div>
+           </div>
+        </div>
+
+        <!-- Rodapé -->
         <footer class="bg-slate-950 p-10 flex flex-col">
             <div class="flex justify-center flex-wrap">
                 <div class=" grow">
@@ -61,7 +159,7 @@
                 </div>
             </div>
             <hr class="text-slate-600">
-            <div class="flex justify-center text-center pt-4 pb-4 text-slate-600 flex-wrap gap-4 lg:justify-between">&#169; Luciano Kohler da Silva, 2026. Todos os direitos reservados.
+            <div class="flex justify-center text-center pt-4 pb-4 text-slate-600 flex-wrap gap-5 lg:justify-between">&#169; Luciano Kohler da Silva, 2026. Todos os direitos reservados.
                 <div class="flex gap-2">
                     <i class="text-slate-800" data-lucide="club" fill="currentColor"></i>
                     <i class="text-red-800" data-lucide="diamond" fill="currentColor"></i>
