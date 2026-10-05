@@ -47,6 +47,13 @@ b {
         pb-4
 }
 
+.link{
+    @apply
+        underline 
+        italic 
+        hover:text-red-400
+}
+
 body {
     @apply text-white;
 }
@@ -240,7 +247,86 @@ body::before {
         rounded
 }
 
+/* ------------ */
+/* PROJECTS CSS */
+/* ------------ */
 
+.project {
+    @apply
+        w-100
+        bg-slate-900
+        rounded-xl
+        border-2
+        border-red-800
+}
+
+.project h3 {
+    @apply
+        mt-2
+}
+
+.project hr {
+    @apply
+        border-2
+        w-12
+        text-red-800
+        rounded-full
+}
+
+.project p {
+    @apply
+        font-bold
+        text-slate-500 
+        text-justify
+        mt-2
+        mb-2
+}
+
+.projectTag {
+    @apply
+      rounded
+        pl-2
+        pr-2
+        pt-1
+        pb-1
+}
+
+.projectContent {
+    @apply
+        m-4
+}
+
+.projectImage {
+    position: relative;
+    display: block;
+}
+
+.projectImage img { 
+    @apply 
+        rounded-xl
+        h-40
+        w-full
+    }
+
+.projectImage::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 30%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), #0f172b);
+}
+
+.projectLink {
+    @apply
+        inline-block
+        rounded-full
+        p-4
+        bg-slate-950
+        border-red-800
+        border-2
+}
 
 @media screen and (max-width: 1024px) {
     .timeline::after {
