@@ -39,7 +39,7 @@ b {
         text-red-700
 }
 
-.container {
+.wrapper {
     @apply
         pl-10
         pr-10
@@ -62,7 +62,7 @@ body::before {
     scroll-behavior: smooth;
     content: "";
     z-index: -1;
-    background-image: url(../checker.png);
+    background-image: url(../assets/checker.png);
     background-repeat: repeat;
     position: fixed;
     top: -128px;
@@ -80,6 +80,23 @@ body::before {
 }
 
 
+/* ---------- */
+/* HEADER CSS */
+/* ---------- */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    width: 100em;
+    position: absolute;
+}
+
+header a {
+    @apply
+        text-slate-200
+        p-2
+}
+
 /* ----------------------- */
 /* TECHNICAL KNOWLEDGE CSS */
 /* ----------------------- */
@@ -95,39 +112,6 @@ body::before {
         bg-slate-900
         h-128
         mt-20
-}
-
-.mainCard {
-    @apply
-        mt-0
-        mb-20
-        grow
-}
-
-.mainCard img {
-    @apply 
-        rounded
-        h-8
-}
-
-.mainCard h3{
-    @apply
-        text-center 
-}
-
-.mainCard .cardIcon {
-    @apply
-        flex
-        justify-between
-        gap-10
-        w-[75%]
-}
-
-.mainCardBadges {
-    @apply
-        flex
-        gap-5
-        justify-center
 }
 
 .cardIcon{
@@ -251,6 +235,23 @@ body::before {
 /* PROJECTS CSS */
 /* ------------ */
 
+#projects h1{
+
+}
+
+#projects {
+    --swiper-pagination-color: #9f0712;
+    --swiper-navigation-color: #9f0712;
+    --swiper-pagination-bullet-inactive-color: #9bb7df;
+}
+
+.swiper {
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
 .project {
     @apply
         w-100
@@ -258,6 +259,7 @@ body::before {
         rounded-xl
         border-2
         border-red-800
+        h-105!
 }
 
 .project h3 {
@@ -303,6 +305,7 @@ body::before {
 
 .projectImage img { 
     @apply 
+        object-cover
         rounded-xl
         h-40
         w-full
@@ -320,20 +323,28 @@ body::before {
 
 .projectLink {
     @apply
+        absolute
+        top-5
+        right-5
         inline-block
         rounded-full
         p-4
         bg-slate-950
         border-red-800
         border-2
+        mt-auto
+        hover:bg-red-800 
+        hover:text-slate-200
+        active:bg-slate-200 
+        active:text-slate-950;
 }
 
 @media screen and (max-width: 1024px) {
-    .timeline::after {
+    #timeline::after {
         left: 31px;
     }
 
-    .container {
+    #timeline {
         width: 100%;
         padding: 0px 25px 0 70px;
     }

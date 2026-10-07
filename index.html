@@ -4,16 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./dist/output.css">
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="/node_modules/swiper/swiper-bundle.min.css">
     <title>Portfolio</title>
 </head>
 <body>
     <main class="m-auto bg-slate-900 max-w-[1700px]">
+        <!-- Cabeçalho -->
+        <header class="wrapper">
+            <img src="assets/logo.svg">
+            <div class="options">
+                <a href="">INÍCIO</a>
+                <a href="">CONHECIMENTO</a>
+                <a href="">PROJETOS</a>
+                <a class="bg-red-800 rounded-md" href="">CONTATO</a>
+            </div>
+        </header>
         <div class="h-screen bg-slate-950" id="hero">a</div>
+
+        <!-- Sobre mim -->
+         <div class="wrapper" id="aboutMe">
+            SOBRE MIM
+         </div>
         
         <!-- Conhecimentos técnicos -->
         <div class="bg-slate-950" id="technicalKnowledge">
-            <h1 class="container">CONHECIMENTO TÉCNICO</h1>
+            <h1 class="wrapper">CONHECIMENTO TÉCNICO</h1>
 
             <div class="flex p-8 justify-center gap-8 pr-40 pl-40" id="cards">
                 <div class="card">
@@ -25,40 +40,15 @@
                     <p>Conhecimento intermediário em <b>PICO-8</b>, além de aptidão artística no Aseprite e musical no FLStudio
                     </p>
                 </div>
-                <div class="card mainCard">
+                <div class="card">
                     <div class="cardIcon">
-                        <i data-lucide="wallpaper" class="text-red-800" height="48" width="48"></i>
-                        <i data-lucide="settings" class="text-red-800" height="48" width="48"></i>
-                        <i data-lucide="database" class="text-red-800" height="48" width="48"></i>
-                        <i data-lucide="wrench" class="text-red-800" height="48" width="48"></i>
+                        <i data-lucide="layout-grid" class="text-red-800" height="48" width="48"></i>
                     </div>
                     <h3 class="text-center">DESENVOLVIMENTO FULLSTACK</h3>
                     <hr>
-                    <p>Aptidão em ferramentas como</p>
-                        <h3>Front-end</h3>
-                            <div class="mainCardBadges">
-                                <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"/>
-                                <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB"/>
-                                <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white"/>
-                            </div>
-                        <h3>Back-end</h3>
-                            <div class="mainCardBadges">
-                                <img src="https://img.shields.io/badge/Node%20js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white"/>
-                                <img src="https://img.shields.io/badge/Java-f89820?style=for-the-badge&logo=buymeacoffee&logoColor=white"/>
-                                <img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white"/>
-                            </div>
-                        <h3>Databases</h3>
-                            <div class="mainCardBadges">
-                                <img src="https://img.shields.io/badge/MariaDB-003545?style=for-the-badge&logo=mariadb&logoColor=white"/>
-                                <img src="https://img.shields.io/badge/MySQL-f89820?style=for-the-badge&logo=mysql&logoColor=white"/>
-                                <img src="https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white"/>
-                            </div>
-                        <h3>Ferramentas Auxiliares</h3>
-                            <div class="mainCardBadges">
-                                <img src="https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white"/>
-                                <img src="https://img.shields.io/badge/Canva-%2300C4CC.svg?&style=for-the-badge&logo=Canva&logoColor=white"/>
-                                <img src="https://img.shields.io/badge/Insomnia-5849be?style=for-the-badge&logo=Insomnia&logoColor=white"/>
-                            </div>
+                    <p>
+                        Aptidão nas áreas essenciais para implementar um software web, como <b>front-end</b>, <b>back-end</b>, <b>databases</b> e <b>integrações via API</b>
+                    </p>
                 </div>
                 <div class="card">
                     <div class="cardIcon">
@@ -76,7 +66,7 @@
 
 
         <!-- Timeline -->
-        <div class="container m-auto" id="timeline">
+        <div class="wrapper m-auto" id="timeline">
             <h1 class="text-right">MINHA LINHA DO TEMPO</h2>
             <p class="text-right mb-2 text-slate-400">Descubra que caminhos me levaram para minha formação atual</p>
            <div id="timelineMain">
@@ -128,10 +118,14 @@
         </div>
 
         <!-- Projetos -->
-         <div class="container bg-slate-950" id="projects">
-            <div id="projectSliderWrapper">
-                <div id="projectList">
-                    <div class="project">
+         <div class="bg-slate-950 wrapper" id="projects">
+
+            <h1 class="text-center pb-2">PROJETOS PESSOAIS</h1>
+            <hr class="text-red-800 border-2 rounded-full w-lg m-auto">
+            <p class="text-slate-500 text-center pb-8">Uma pequena coletânea de todo o meu conhecimento</p>
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <div class="project swiper-slide">
                         <div class="projectImage">
                             <img src="./assets/bannerANITI.png" alt="">
                         </div>
@@ -139,14 +133,14 @@
                             <span class="projectTag bg-red-300 text-red-900">Gamedev</span>
                             <h3>A Night In The Island</h3>
                             <hr>
-                            <p>Um jogo de mistério sobre um espírito maligno e uma ilha desconhecida para você</p>
+                            <p>Um jogo de mistério sobre um espírito maligno e uma ilha desconhecida para você, todos os gráficos do jogo são feitos puramente em <b>ASCII Art!</b></p>
                             <a class="projectLink" href="https://google.com">
                                 <i data-lucide="corner-down-right"></i>
                             </a>
                         </div>
                     </div>
                     
-                    <div class="project">
+                    <div class="project swiper-slide">
                         <div class="projectImage">
                             <img src="./assets/bannerHyperdex.png" alt="">
                         </div>
@@ -161,44 +155,37 @@
                         </div>
                     </div>
                     
-                    <div class="project">
+                    <div class="project swiper-slide">
                         <div class="projectImage">
-                            <img src="./assets/bannerANITI.png" alt="">
+                            <img src="./assets/bannerUDESC.png" alt="">
                         </div>
                         <div class="projectContent">
                             <span class="projectTag bg-green-300 text-green-900">Acadêmico</span>
                             <h3>Repositório de Estudos</h3>
                             <hr>
-                            <p>Um aglomerado de anotações e implementações de trabalhos práticos que desenvolvi durante meu bacharel, contendo dezenas de projetos que variam De relatórios teóricos para implementações práticas</p>
-                            <a class="projectLink" href="https://google.com">
-                                <i data-lucide="corner-down-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="project">
-                        <div class="projectImage">
-                            <img src="./assets/bannerANITI.png" alt="">
-                        </div>
-                        <div class="projectContent">
-                            <span class="projectTag bg-green-300 text-green-900">Acadêmico</span>
-                            <h3>Repositório de Estudos</h3>
-                            <hr>
-                            <p>Um aglomerado de anotações e implementações de trabalhos práticos que desenvolvi durante meu bacharel, contendo dezenas de projetos que variam De relatórios teóricos para implementações práticas</p>
+                            <p>Um aglomerado de anotações e implementações de trabalhos práticos que desenvolvi durante meu bacharelado, contendo <b>dezenas de projetos</b> que variam de relatórios teóricos para implementações práticas</p>
                             <a class="projectLink" href="https://google.com">
                                 <i data-lucide="corner-down-right"></i>
                             </a>
                         </div>
                     </div>
                 </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+
             </div>
          </div>
          
+         <!-- BLOG -->
+          <div class="wrapper" id="blog">BLOG</div>
+
          <!-- Rodapé -->
         <footer class="bg-slate-950 p-10 flex flex-col">
             <div class="flex justify-center flex-wrap">
                 <div class=" grow">
                     <h2 class="text-center lg:text-left">Agradeço por conhecer um pouco mais de mim!</h2>
-                    <p class="text-slate-400 text-center lg:text-left">Quer trocar uma ideia? Só mandar mensagem!</p>
+                    <p class="text-slate-500 text-center lg:text-left">Quer trocar uma ideia? Só mandar mensagem!</p>
                 </div>
                 <div id="footer-icons" class="flex pt-4 pb-4 gap-5">
                     <a href="https://www.linkedin.com/in/luciano-kohler-da-silva/" target="_blank">
@@ -237,8 +224,10 @@
         </footer>
     </main>
 
+    <script src="/node_modules/lucide/dist/umd/lucide.js"></script>
     <script>
         lucide.createIcons();
     </script>
+    <script type="module" src="js/swiper.js"></script>
 </body>
 </html>
