@@ -10,13 +10,13 @@
 <body>
     <main class="m-auto bg-slate-900 max-w-[1700px]">
         <!-- Cabeçalho -->
-        <header class="wrapper">
-            <img src="assets/logo.svg">
+        <header class="wrapper max-w-[1700px]">
+            <img class="w-32" src="assets/logo.svg">
             <div class="options">
-                <a href="">INÍCIO</a>
-                <a href="">CONHECIMENTO</a>
-                <a href="">PROJETOS</a>
-                <a class="bg-red-800 rounded-md" href="">CONTATO</a>
+                <a href="#hero">INÍCIO</a>
+                <a href="#technicalKnowledge">CONHECIMENTO</a>
+                <a href="#projects">PROJETOS</a>
+                <a class="mainHeaderLink" href="#contact">CONTATO</a>
             </div>
         </header>
         <div class="h-screen bg-slate-950" id="hero">a</div>
@@ -27,9 +27,9 @@
          </div>
         
         <!-- Conhecimentos técnicos -->
-        <div class="bg-slate-950" id="technicalKnowledge">
-            <h1 class="wrapper">CONHECIMENTO TÉCNICO</h1>
-
+        <div class="wrapper bg-slate-950" id="technicalKnowledge">
+            <h1>CONHECIMENTO TÉCNICO</h1>
+            <hr class="h1Follower">
             <div class="flex p-8 justify-center gap-8 pr-40 pl-40" id="cards">
                 <div class="card">
                     <div class="cardIcon">
@@ -68,7 +68,8 @@
         <!-- Timeline -->
         <div class="wrapper m-auto" id="timeline">
             <h1 class="text-right">MINHA LINHA DO TEMPO</h2>
-            <p class="text-right mb-2 text-slate-400">Descubra que caminhos me levaram para minha formação atual</p>
+            <hr class="h1Follower float-end">
+            <p class="text-right mt-2 mb-2 text-slate-400">Descubra que caminhos me levaram para minha formação atual</p>
            <div id="timelineMain">
                <div class="timelineEvent">
                    <div class="timelineContent">
@@ -120,9 +121,9 @@
         <!-- Projetos -->
          <div class="bg-slate-950 wrapper" id="projects">
 
-            <h1 class="text-center pb-2">PROJETOS PESSOAIS</h1>
-            <hr class="text-red-800 border-2 rounded-full w-lg m-auto">
-            <p class="text-slate-500 text-center pb-8">Uma pequena coletânea de todo o meu conhecimento</p>
+            <h1 class="text-center">PROJETOS PESSOAIS</h1>
+            <hr class="h1Follower m-auto">
+            <p class="text-slate-500 text-center mt-2 pb-8">Uma pequena coletânea de todo o meu conhecimento</p>
             <div class="swiper">
                 <div class="swiper-wrapper">
                     <div class="project swiper-slide">
@@ -181,7 +182,7 @@
           <div class="wrapper" id="blog">BLOG</div>
 
          <!-- Rodapé -->
-        <footer class="bg-slate-950 p-10 flex flex-col">
+        <footer id="contact" class="bg-slate-950 p-10 flex flex-col">
             <div class="flex justify-center flex-wrap">
                 <div class=" grow">
                     <h2 class="text-center lg:text-left">Agradeço por conhecer um pouco mais de mim!</h2>

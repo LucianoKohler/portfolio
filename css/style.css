@@ -5,6 +5,7 @@
 }
 
 h1 {
+    position: relative;
     text-shadow: 
         5px -2px 10px rgb(113, 8, 8),
         -5px 2px 10px rgb(19, 19, 102);
@@ -12,6 +13,16 @@ h1 {
     text-red-800
         font-bold 
         text-5xl
+        pb-2
+}
+
+.h1Follower{
+    right: 0;
+    @apply
+        w-sm
+        rounded-full
+        border-b-4
+        border-red-800
 }
 
 h2 {
@@ -54,12 +65,16 @@ b {
         hover:text-red-400
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 body {
     @apply text-white;
 }
 
 body::before {
-    scroll-behavior: smooth;
+
     content: "";
     z-index: -1;
     background-image: url(../assets/checker.png);
@@ -87,14 +102,51 @@ body::before {
 header {
     display: flex;
     justify-content: space-between;
-    width: 100em;
-    position: absolute;
+    position: sticky;
+    top: 0;
+    margin-top: -64px;
+    z-index: 3;
 }
 
 header a {
+    transition: all .2s ease;
+    @apply
+        p-2
+        font-bold
+        relative
+}
+
+header a:not(.mainHeaderLink)::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform .2s ease;
+    @apply
+        bg-red-800
+}
+
+header a:not(.mainHeaderLink):hover::before {
+    transform: scaleX(.8);
+}
+
+
+    header a:not(.mainHeaderLink) {
     @apply
         text-slate-200
-        p-2
+        hover:text-slate-400
+}
+
+header .mainHeaderLink {
+    @apply
+        bg-red-800 
+        rounded-md
+        hover:bg-slate-200
+        hover:text-red-800
 }
 
 /* ----------------------- */
@@ -152,7 +204,7 @@ header a {
 
 .timelineEvent {
     position: relative;
-    width: 50%;
+    width: 40%;
     
     @apply
         pt-2
@@ -180,11 +232,14 @@ header a {
         rounded-full
 }
 
+.timelineEvent:nth-of-type(odd) {
+    left: 10%;
+}
+
 .timelineEvent:nth-of-type(even)::after{ left: -20px; }
 .timelineEvent:nth-of-type(even) { left: 50%; }
 
 /* connectors */
-
 .timelineEvent:nth-of-type(odd)::before{
     content: "";
     width: 30px;
@@ -231,13 +286,21 @@ header a {
         rounded
 }
 
+@media screen and (max-width: 1024px) {
+
+
+    #timeline {
+        width: 100%;
+        padding: 0px 25px;
+    }
+
+    .timelineEvent:nth-of-type(odd) { left: 0; }
+    .timelineEvent { padding-right: 0;}
+}
+
 /* ------------ */
 /* PROJECTS CSS */
 /* ------------ */
-
-#projects h1{
-
-}
 
 #projects {
     --swiper-pagination-color: #9f0712;
@@ -339,27 +402,15 @@ header a {
         active:text-slate-950;
 }
 
-@media screen and (max-width: 1024px) {
-    #timeline::after {
-        left: 31px;
-    }
-
-    #timeline {
-        width: 100%;
-        padding: 0px 25px 0 70px;
-    }
-}
-
 #footer-icons a {
     @apply 
+        transition
         p-4 
         bg-slate-800 
         rounded-full 
         ease-out 
         hover:bg-slate-200 
         hover:text-slate-900 
-        active:bg-red-800 
-        active:text-slate-200
 }
 
 #footer-icons a:nth-child(odd){
@@ -368,8 +419,6 @@ header a {
         ease-out 
         hover:bg-slate-200 
         hover:text-slate-900 
-        active:bg-slate-800 
-        active:text-slate-200
 }
 
 @media screen and (max-width: 1024px) {
