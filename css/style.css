@@ -16,13 +16,25 @@ h1 {
         pb-2
 }
 
-.h1Follower{
+p {
+    @apply 
+        text-sm
+}
+
+section hr{
     right: 0;
     @apply
         w-sm
         rounded-full
         border-b-4
         border-red-800
+}
+
+section p {
+    @apply
+        mt-2
+        mb-2 
+        text-slate-400
 }
 
 h2 {
@@ -154,16 +166,81 @@ header .mainHeaderLink {
 /* ----------------------- */
 
 .card{
+    background-color: transparent;
+    perspective: 1000px;
+    width: 100rem;
+    transform: translateY(200%);
+}
+
+.card i {
+    @apply
+        text-red-800
+}
+
+.card:nth-of-type(1)              { animation: cardFlick 1.25s cubic-bezier(0.075, 1, 0.165, 1) 0.2s forwards; }
+.card:nth-of-type(2)              { animation: cardFlick 1s    cubic-bezier(0.075, 1, 0.165, 1) forwards; }
+.card:nth-of-type(3)              { animation: cardFlick 1.5s  cubic-bezier(0.075, 1, 0.165, 1) 0.4s forwards; }
+.card:nth-of-type(1) .cardContent { animation: cardFlip  1.25s cubic-bezier(0.075, 1, 0.165, 1) 1.0s forwards; }
+.card:nth-of-type(2) .cardContent { animation: cardFlip  1s    cubic-bezier(0.075, 1, 0.165, 1) 0.8s forwards; }
+.card:nth-of-type(3) .cardContent { animation: cardFlip  1.5s  cubic-bezier(0.075, 1, 0.165, 1) 1.2s forwards; }
+
+@keyframes cardFlick {
+   0%     { transform: translateY(200%);}
+   100%   { transform: translateY(0%);} 
+}
+
+@keyframes cardFlip {
+    0%   { transform: rotateY(0deg);  }
+    100% { transform: rotateY(-180deg);}
+}
+
+.cardContent {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.4s;
+    transform-style: preserve-3d;
     box-shadow: 0px 0px 20px #9f0712;
     @apply
         border-red-800 
         border-3
         w-[20em] 
-        p-4 
-        rounded-2xl 
+        rounded-2xl
         bg-slate-900
         h-128
-        mt-20
+}
+
+.cardFront, .cardBack {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    @apply
+        bg-slate-900 
+        rounded-2xl
+}
+
+.cardFront {
+    @apply
+        p-4
+        flex
+        flex-col
+        justify-between
+}
+
+.cardFront p {
+    @apply
+        text-3xl
+        font-bold
+}
+
+.cardBack {
+    transform: rotateY(180deg);
+    @apply
+        z-1
+        p-4
 }
 
 .cardIcon{
@@ -177,10 +254,14 @@ header .mainHeaderLink {
         rounded-md
 }
 
-
 /* ------------ */
 /* TIMELINE CSS */
 /* ------------ */
+
+#timeline {
+    z-index: 6;
+    position: relative;
+}
 
 #timelineMain {
     position: relative;
@@ -287,8 +368,6 @@ header .mainHeaderLink {
 }
 
 @media screen and (max-width: 1024px) {
-
-
     #timeline {
         width: 100%;
         padding: 0px 25px;
@@ -392,14 +471,13 @@ header .mainHeaderLink {
         inline-block
         rounded-full
         p-4
-        bg-slate-950
+        bg-slate-900
         border-red-800
         border-2
         mt-auto
         hover:bg-red-800 
         hover:text-slate-200
-        active:bg-slate-200 
-        active:text-slate-950;
+
 }
 
 #footer-icons a {
