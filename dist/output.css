@@ -40,6 +40,7 @@
     --text-5xl--line-height: 1;
     --font-weight-bold: 700;
     --radius-md: 0.375rem;
+    --radius-lg: 0.5rem;
     --radius-xl: 0.75rem;
     --radius-2xl: 1rem;
     --ease-out: cubic-bezier(0, 0, 0.2, 1);
@@ -435,7 +436,7 @@ header {
   position: sticky;
   top: 0;
   margin-top: -64px;
-  z-index: 3;
+  z-index: 10;
 }
 header a {
   transition: all .2s ease;
@@ -480,6 +481,29 @@ header .mainHeaderLink {
       color: var(--color-red-800);
     }
   }
+}
+#aboutMe {
+  height: calc(var(--spacing) * 96);
+  width: calc(var(--spacing) * 96);
+}
+.aboutMeCard:nth-of-type(odd) {
+  background-color: var(--color-red-800);
+}
+.aboutMeCard:nth-of-type(even) {
+  background-color: var(--color-slate-800);
+}
+.aboutMeCard {
+  display: flex !important;
+  height: calc(var(--spacing) * 90) !important;
+  width: calc(var(--spacing) * 72) !important;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-xl);
+}
+.aboutMeCard img {
+  width: 95%;
+  height: 95%;
+  border-radius: var(--radius-lg);
 }
 .card {
   background-color: transparent;
@@ -682,7 +706,7 @@ header .mainHeaderLink {
   --swiper-navigation-color: #9f0712;
   --swiper-pagination-bullet-inactive-color: #9bb7df;
 }
-.swiper {
+.projectSwiper {
   width: 80%;
   max-width: 1200px;
   margin: 0 auto;

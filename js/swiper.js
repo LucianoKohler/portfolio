@@ -1,6 +1,6 @@
 import Swiper from "/node_modules/swiper/swiper-bundle.min.mjs";
 
-const swiper = new Swiper(".swiper", {
+const swiper = new Swiper(".projectSwiper", {
   loop: false, 
   rewind: true,
   grabCursor: true,
@@ -24,4 +24,10 @@ const swiper = new Swiper(".swiper", {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
   },
+});
+
+const swiper2 = new Swiper(".cardsSwiper", {
+    effect: 'cards',
+    grabCursor: true,
+    rewind: true
 });

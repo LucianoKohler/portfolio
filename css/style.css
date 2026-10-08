@@ -117,7 +117,7 @@ header {
     position: sticky;
     top: 0;
     margin-top: -64px;
-    z-index: 3;
+    z-index: 10;
 }
 
 header a {
@@ -159,6 +159,39 @@ header .mainHeaderLink {
         rounded-md
         hover:bg-slate-200
         hover:text-red-800
+}
+
+
+
+/* ------------ */
+/* ABOUT ME CSS */
+/* ------------ */
+
+#aboutMe {
+    @apply
+        h-96
+        w-96
+
+}
+
+
+.aboutMeCard:nth-of-type(odd) { @apply bg-red-800 }
+.aboutMeCard:nth-of-type(even) { @apply bg-slate-800 }
+.aboutMeCard {
+    @apply
+        flex!
+        justify-center
+        items-center
+        rounded-xl
+        h-90!
+        w-72!
+}
+
+.aboutMeCard img {
+    width: 95%;
+    height: 95%;
+    @apply
+        rounded-lg
 }
 
 /* ----------------------- */
@@ -387,7 +420,7 @@ header .mainHeaderLink {
     --swiper-pagination-bullet-inactive-color: #9bb7df;
 }
 
-.swiper {
+.projectSwiper {
     width: 80%;
     max-width: 1200px;
     margin: 0 auto;
