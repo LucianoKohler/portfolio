@@ -63,11 +63,7 @@ b {
 }
 
 .wrapper {
-    @apply
-        pl-10
-        pr-10
-        pt-4
-        pb-4
+    padding: 32px 96px;
 }
 
 .link{
@@ -169,9 +165,10 @@ header .mainHeaderLink {
 
 #aboutMe {
     @apply
-        h-96
-        w-96
-
+        flex
+        flex-wrap
+        gap-8
+        justify-center
 }
 
 
@@ -183,31 +180,76 @@ header .mainHeaderLink {
         justify-center
         items-center
         rounded-xl
-        h-90!
-        w-72!
+}
+
+.cardsSwiper {
+    @apply
+        h-118
+        w-96
+        mr-10!
 }
 
 .aboutMeCard img {
-    width: 95%;
-    height: 95%;
+    width: 100%;
+    height: 100%;
     @apply
         rounded-lg
+}
+
+.vert, .horiz{
+    @apply
+        max-w-100
+        grow
+        text-justify
+}
+
+.vert div, .horiz div {
+    @apply
+        p-4
+        rounded-lg
+}
+
+.vert {
+    display: flex;
+    gap: 20px !important;
+    flex-grow: 1;
+    flex-direction: column !important;
+}
+
+.highlight {
+    background: linear-gradient(to left top, #ff7780, #de343f, #c30915);
+    color: white;
+    flex-grow: 1;
+    font-weight: 700;
+    text-align: justify;
+    min-width: 100%;
+    max-width: 300px;
+}
+
+.highlight p {
+    @apply
+        text-lg
+        leading-6
+
 }
 
 /* ----------------------- */
 /* TECHNICAL KNOWLEDGE CSS */
 /* ----------------------- */
 
+#cards {
+    @apply 
+        flex
+        flex-wrap
+        p-8
+        justify-center
+        gap-8
+}
+
 .card{
     background-color: transparent;
     perspective: 1000px;
-    width: 100rem;
     transform: translateY(200%);
-}
-
-.card i {
-    @apply
-        text-red-800
 }
 
 .card:nth-of-type(1)              { animation: cardFlick 1.25s cubic-bezier(0.075, 1, 0.165, 1) 0.2s forwards; }
@@ -229,8 +271,6 @@ header .mainHeaderLink {
 
 .cardContent {
     position: relative;
-    width: 100%;
-    height: 100%;
     text-align: center;
     transition: transform 0.4s;
     transform-style: preserve-3d;
@@ -241,7 +281,7 @@ header .mainHeaderLink {
         w-[20em] 
         rounded-2xl
         bg-slate-900
-        h-128
+        h-144
 }
 
 .cardFront, .cardBack {
@@ -274,6 +314,16 @@ header .mainHeaderLink {
     @apply
         z-1
         p-4
+        text-center
+}
+
+.cardBack h3 { @apply mb-0 }
+
+.cardBack hr {
+    @apply
+        border-2
+        border-red-800
+        m-2
 }
 
 .cardIcon{
@@ -284,7 +334,7 @@ header .mainHeaderLink {
         bg-slate-950
         border-red-800
         border-2
-        rounded-md
+        rounded-lg
 }
 
 /* ------------ */
@@ -533,6 +583,10 @@ header .mainHeaderLink {
 }
 
 @media screen and (max-width: 1024px) {
+    .wrapper {
+        padding: 32px 32px
+    }
+    
     #timelineMain::after {
         left: 31px;
     }
