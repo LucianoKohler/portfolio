@@ -24,7 +24,6 @@ p {
 section hr{
     right: 0;
     @apply
-        w-sm
         rounded-full
         border-b-4
         border-red-800
@@ -167,7 +166,7 @@ header .mainHeaderLink {
     @apply
         flex
         flex-wrap
-        gap-8
+        gap-4
         justify-center
 }
 

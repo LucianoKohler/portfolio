@@ -28,7 +28,6 @@
     --color-slate-950: oklch(12.9% 0.042 264.695);
     --color-white: #fff;
     --spacing: 0.25rem;
-    --container-sm: 24rem;
     --text-sm: 0.875rem;
     --text-sm--line-height: calc(1.25 / 0.875);
     --text-lg: 1.125rem;
@@ -205,11 +204,17 @@
   .order-2 {
     order: 2;
   }
-  .float-end {
-    float: inline-end;
+  .m-0 {
+    margin: 0px;
   }
   .m-auto {
     margin: auto;
+  }
+  .mt-0 {
+    margin-top: 0px;
+  }
+  .mt-0\! {
+    margin-top: 0px !important;
   }
   .ml-auto {
     margin-left: auto;
@@ -299,6 +304,9 @@
   .bg-slate-950 {
     background-color: var(--color-slate-950);
   }
+  .p-0 {
+    padding: 0px;
+  }
   .p-10 {
     padding: calc(var(--spacing) * 10);
   }
@@ -381,7 +389,6 @@ p {
 }
 section hr {
   right: 0;
-  width: var(--container-sm);
   border-radius: calc(infinity * 1px);
   border-bottom-style: var(--tw-border-style);
   border-bottom-width: 4px;
@@ -517,7 +524,7 @@ header .mainHeaderLink {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: calc(var(--spacing) * 8);
+  gap: calc(var(--spacing) * 4);
 }
 .aboutMeCard:nth-of-type(odd) {
   background-color: var(--color-red-800);
