@@ -8,12 +8,13 @@ h1 {
     position: relative;
     text-shadow: 
         5px -2px 10px rgb(113, 8, 8),
-        -5px 2px 10px rgb(19, 19, 102);
-    @apply
-    text-red-800
-        font-bold 
-        text-5xl
-        pb-2
+        -5px 2px 10px #131366;
+    font-size: clamp(1rem, 10vw, 3.5rem);
+    line-height: 100%;
+        @apply
+          text-red-800
+            font-bold 
+            pb-2
 }
 
 p {
@@ -183,7 +184,8 @@ header .mainHeaderLink {
 
 .cardsSwiper {
     @apply
-        h-118
+        max-w-[80vw]
+        h-auto
         w-96
         mr-10!
 }
@@ -218,7 +220,6 @@ header .mainHeaderLink {
 .highlight {
     background: linear-gradient(to left top, #ff7780, #de343f, #c30915);
     color: white;
-    flex-grow: 1;
     font-weight: 700;
     text-align: justify;
     min-width: 100%;
@@ -229,7 +230,6 @@ header .mainHeaderLink {
     @apply
         text-lg
         leading-6
-
 }
 
 /* ----------------------- */
@@ -316,8 +316,6 @@ header .mainHeaderLink {
         text-center
 }
 
-.cardBack h3 { @apply mb-0 }
-
 .cardBack hr {
     @apply
         border-2
@@ -334,6 +332,99 @@ header .mainHeaderLink {
         border-red-800
         border-2
         rounded-lg
+}
+
+.flag{
+    height: 55px;
+    position: relative;
+    @apply
+        m-3
+        p-3
+        flex
+        items-center
+        rounded-lg
+        gap-2
+        overflow-hidden
+}
+
+.flag::before {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    opacity: 50%;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.flag:nth-of-type(even)::before { bottom: -10px; right:  -10px; transform: rotate(30deg); }
+.flag:nth-of-type(odd)::before  { top:    -10px; left:   -10px; transform: rotate(-30deg); }
+
+.flag p{
+    @apply
+        font-bold
+}
+
+.flag:nth-of-type(odd){
+    flex-direction: row-reverse;
+}
+
+.flag:nth-of-type(2) { background-color: #665762;}
+.flag:nth-of-type(3) { background-color: #265787;}
+.flag:nth-of-type(4) { background-color: #E96B15;}
+.flag:nth-of-type(5) { background-color: #F7004B;}
+
+.flag:nth-of-type(2)::before { background-image: url(../assets/softwares/aseprite.png);}
+.flag:nth-of-type(3)::before { background-image: url(../assets/softwares/blender.png);}
+.flag:nth-of-type(4)::before { background-image: url(../assets/softwares/fl.png);}
+.flag:nth-of-type(5)::before { background-image: url(../assets/softwares/pico-8.png);}
+
+
+.flag img {
+    height: 90%;
+}
+
+.techGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.techGrid span {
+    @apply
+        bg-slate-800
+        rounded-lg
+        aspect-square
+        flex
+        justify-center
+        items-center
+        p-2 
+}
+
+.techGrid span img {
+    height: 70%;
+}
+
+.softSkills{
+    text-align: left;
+}
+
+.softSkills > li {
+    margin-bottom: 15px;
+}
+
+.softSkills li ul li{
+    border-left: 2px solid #9f0712;
+    border-bottom: 2px solid #9f0712;
+    margin-left: 10px;
+    padding-left: 6px;
+    font-weight: 600;
+    width: fit-content;
+    line-height: 24px !important;
+    @apply
+        text-sm
 }
 
 /* ------------ */
@@ -452,11 +543,12 @@ header .mainHeaderLink {
 @media screen and (max-width: 1024px) {
     #timeline {
         width: 100%;
-        padding: 0px 25px;
+        padding-left: 25px;
     }
 
     .timelineEvent:nth-of-type(odd) { left: 0; }
     .timelineEvent { padding-right: 0;}
+
 }
 
 /* ------------ */
