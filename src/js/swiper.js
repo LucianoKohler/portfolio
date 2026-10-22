@@ -1,5 +1,3 @@
-import Swiper from "/node_modules/swiper/swiper-bundle.min.mjs";
-
 const swiper = new Swiper(".projectSwiper", {
   loop: false, 
   rewind: true,
