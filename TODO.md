@@ -1,0 +1,4 @@
+- Cards flick on scroll
+- Hero screen
+- Responsive + smaller Header 
+- Remove blog
