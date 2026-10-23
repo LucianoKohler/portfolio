@@ -329,7 +329,7 @@ header .mainHeaderLink {
         p-4 
         m-auto 
         w-fit 
-        bg-slate-950
+        bg-slate-900
         border-red-800
         border-2
         rounded-lg
@@ -600,12 +600,12 @@ header .mainHeaderLink {
         pb-1
     }
     
-    .projectContent {
+.projectContent {
     @apply
         m-4
-    }
+}
 
-    .projectImage {
+.projectImage {
     position: relative;
     display: block;
 }
@@ -642,8 +642,11 @@ header .mainHeaderLink {
         mt-auto
         hover:bg-red-800 
         hover:text-slate-200
-
 }
+
+/* ---------- */
+/* FOOTER CSS */
+/* ---------- */
 
 #footer-icons a {
     @apply 
