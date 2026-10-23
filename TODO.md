@@ -2,3 +2,6 @@
 - Hero screen
 - Responsive + smaller Header 
 - Remove blog
+- Correct links
+- alts on images
+- make carroussel wider 

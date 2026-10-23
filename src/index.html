@@ -8,21 +8,22 @@
     <title>Portfolio</title>
 </head>
 <body>
-    <main class="m-auto bg-slate-900 max-w-[1700px]">
+    <main class="m-auto max-w-[1700px] bg-slate-950">
         <!-- Cabeçalho -->
-        <header class="wrapper max-w-[1700px]">
+        <header class="max-w-[1700px] bg-slate-900">
             <img class="w-32" src="assets/logo.svg">
-            <div class="options">
+            <i data-lucide="menu" class="hamburger hidden"></i>
+            <nav class="options">
                 <a href="#hero">INÍCIO</a>
                 <a href="#technicalKnowledge">CONHECIMENTO</a>
                 <a href="#projects">PROJETOS</a>
                 <a class="mainHeaderLink" href="#contact">CONTATO</a>
-            </div>
+            </nav>
         </header>
-        <div class="h-screen bg-slate-950" id="hero">a</div>
+        <div class="h-screen bg-slate-900" id="hero">a</div>
 
         <!-- Sobre mim -->
-         <div class="wrapper" id="aboutMe">
+         <div class="wrapper bg-slate-950" id="aboutMe">
             <div class="aboutMeCards">
                 <div class="swiper cardsSwiper">
                     <div class="swiper-wrapper">
@@ -66,7 +67,7 @@
         </div>
         
         <!-- Conhecimentos técnicos -->
-        <div class="wrapper bg-slate-950" id="technicalKnowledge">
+        <div class="wrapper bg-slate-900" id="technicalKnowledge">
             <section>
                 <h1>CONHECIMENTO TÉCNICO</h1>
                 <hr>
@@ -209,7 +210,7 @@
 
 
         <!-- Timeline -->
-        <div class="wrapper m-auto" id="timeline">
+        <div class="wrapper m-auto bg-slate-950" id="timeline">
             <section>
                 <h1 class="text-right">MINHA LINHA DO TEMPO</h2>
                 <hr>
@@ -264,7 +265,7 @@
         </div>
 
         <!-- Projetos -->
-         <div class="bg-slate-950 wrapper" id="projects">
+         <div class="bg-slate-900 wrapper" id="projects">
 
             <section>
                 <h1 class="text-center">PROJETOS PESSOAIS</h1>
@@ -282,7 +283,7 @@
                             <h3>A Night In The Island</h3>
                             <hr>
                             <p>Um jogo de mistério sobre um espírito maligno e uma ilha desconhecida para você, todos os gráficos do jogo são feitos puramente em <b>ASCII Art!</b></p>
-                            <a class="projectLink" target="_blank" href="https://google.com">
+                            <a class="projectLink" target="_blank" href="https://a-night-in-the-island.vercel.app/">
                                 <i data-lucide="corner-down-right"></i>
                             </a>
                         </div>
@@ -297,7 +298,7 @@
                             <h3>Hyperdex</h3>
                             <hr>
                             <p>Um dashboard que usufrui da <b><a class="link" href="https://pokeapi.co/">pokeapi</a></b> para mostrar dados de Pokémon em uma interface responsiva</p>
-                            <a class="projectLink" target="_blank" href="https://google.com">
+                            <a class="projectLink" target="_blank" href="https://lucianokohler.github.io/HyperDex">
                                 <i data-lucide="corner-down-right"></i>
                             </a>
                         </div>
@@ -312,7 +313,7 @@
                             <h3>Repositório de Estudos</h3>
                             <hr>
                             <p>Um aglomerado de anotações e implementações de trabalhos práticos que desenvolvi durante meu bacharelado, contendo <b>dezenas de projetos</b> que variam de relatórios teóricos para implementações práticas</p>
-                            <a class="projectLink" target="_blank" href="https://google.com">
+                            <a class="projectLink" target="_blank" href="https://github.com/LucianoKohler/BachareladoEmCienciaDaComputacao">
                                 <i data-lucide="corner-down-right"></i>
                             </a>
                         </div>
@@ -324,9 +325,6 @@
 
             </div>
          </div>
-         
-         <!-- BLOG -->
-          <div class="wrapper" id="blog">BLOG</div>
 
          <!-- Rodapé -->
         <footer id="contact" class=" bg-slate-950 p-10 flex flex-col">

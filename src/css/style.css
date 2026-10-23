@@ -1,5 +1,5 @@
 @import "tailwindcss";
-/*npx @tailwindcss/cli -i ./css/style.css -o ./dist/output.css --watch*/
+/*npx @tailwindcss/cli -i ./src/css/style.css -o ./dist/css/output.css --watch*/
 * {
     @apply box-border
 }
@@ -112,8 +112,9 @@ header {
     justify-content: space-between;
     position: sticky;
     top: 0;
-    margin-top: -64px;
     z-index: 10;
+    @apply
+        p-4
 }
 
 header a {
@@ -540,16 +541,6 @@ header .mainHeaderLink {
         rounded
 }
 
-@media screen and (max-width: 1024px) {
-    #timeline {
-        width: 100%;
-        padding-left: 25px;
-    }
-
-    .timelineEvent:nth-of-type(odd) { left: 0; }
-    .timelineEvent { padding-right: 0;}
-
-}
 
 /* ------------ */
 /* PROJECTS CSS */
@@ -576,7 +567,7 @@ header .mainHeaderLink {
         border-2
         border-red-800
         h-105!
-}
+    }
 
 .project h3 {
     @apply
@@ -603,18 +594,18 @@ header .mainHeaderLink {
 .projectTag {
     @apply
       rounded
-        pl-2
+      pl-2
         pr-2
         pt-1
         pb-1
-}
-
-.projectContent {
+    }
+    
+    .projectContent {
     @apply
         m-4
-}
+    }
 
-.projectImage {
+    .projectImage {
     position: relative;
     display: block;
 }
@@ -663,9 +654,9 @@ header .mainHeaderLink {
         ease-out 
         hover:bg-slate-200 
         hover:text-slate-900 
-}
-
-#footer-icons a:nth-child(odd){
+    }
+    
+    #footer-icons a:nth-child(odd){
     @apply 
         bg-red-800 
         ease-out 
@@ -677,7 +668,12 @@ header .mainHeaderLink {
     .wrapper {
         padding: 32px 32px
     }
-    
+
+    #timeline {
+        width: 100%;
+        padding-left: 25px;
+    }
+        
     #timelineMain::after {
         left: 31px;
     }
@@ -687,9 +683,15 @@ header .mainHeaderLink {
         padding-left: 60px;
     }
 
+    .timelineEvent { padding-right: 0;}
+    .timelineEvent:nth-of-type(odd)  { left: 0; }
+    .timelineEvent:nth-of-type(even) { left: 0; }
     .timelineEvent:nth-of-type(even)::after, .timelineEvent:nth-of-type(odd)::after{ left: 10px; }
     .timelineEvent:nth-of-type(even)::before, .timelineEvent:nth-of-type(odd)::before{ left: 50px; z-index: 2; }
-    .timelineEvent:nth-of-type(even) {
-        left: 0;
-    }
+}
+
+@media screen and (max-width: 575px) {
+    nav { display: none; }
+    .hamburger { display: block; }
+    
 }
